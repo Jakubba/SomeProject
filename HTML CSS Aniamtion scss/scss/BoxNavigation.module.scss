@@ -1,0 +1,77 @@
+@import './../../assets/styles/variables.scss';
+.SectionNavigation {
+  height: calc(100vh - 3.75rem);
+  //max-height: 49rem;
+  width: 100%;
+  position: relative;
+  .imageBackground {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 10;
+    padding: 1rem;
+    height: auto;
+    width: auto;
+    line-height: 3rem;
+    color: $color-white;
+    margin-bottom: 2.25rem;
+    z-index: 10;
+    @media (min-width: 992px) {
+      font-size: $fs-96;
+      line-height: 92px;
+      min-width: 540px;
+    }
+  }
+  //   @media (min-width: 992px) {
+  //       background: none;
+  //       &:after {
+  //         width: 100%;
+  //         position: absolute;
+  //         left: 0;
+  //         content: '';
+  //         display: block;
+  //         background-color: var(--color-theme-100);
+  //         top: 0;
+  //         height: 100%;
+  //         opacity: 0.7;
+  //     z-index: 2;
+  //   }
+}
+&:hover {
+  .linkNav {
+    &::after {
+      color: $color-white;
+      padding-right: 2.4375rem;
+      transition: all 0.3s ease-in-out;
+      z-index: 10;
+      &:hover {
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+.titleOverlay {
+  top: 80%;
+  left: 0px;
+  width: clamp(265px, 70%, 650px);
+  height: 200px;
+  position: absolute;
+  mix-blend-mode: multiply;
+  background-color: var(--color-theme-100);
+  z-index: 5;
+  opacity: 0.7;
+  @media (min-width: 992px) {
+    top: 15%;
+  }
+}
+.themeKitchen {
+  background-color: rgb(123, 100, 105);
+}
+.themeBathroom {
+  background-color: rgb(0, 96, 102);
+}
+.themeInteriors {
+  background-color: rgb(12, 100, 0);
+}

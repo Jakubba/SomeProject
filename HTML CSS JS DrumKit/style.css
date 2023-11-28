@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 250px;
+  background-image: linear-gradient(
+    to right top,
+    #671a46,
+    #651c53,
+    #602061,
+    #562670,
+    #452e7e,
+    #363986,
+    #23438d,
+    #004c91,
+    #00578d,
+    #005d7f,
+    #00626e,
+    #09645e
+  );
+}
+h1 {
+  font-size: 4rem;
+  font-family: 'Righteous', cursive;
+  color:rgba(255, 0, 0, 0.479);
+  margin-bottom: 4rem;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.719);
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.playing {
+  transform: scale(1.1);
+  background-color: #ffc600;
+  border-color: #ff1100;
+  box-shadow: 0 0 10px #d9ff00;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1c9bd6;
+  border: 0 solid #e5e7eb;
+  transition: all 0.07s;
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 1rem;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.key:focus {
+  outline: 0;
+}
+
+.key:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.playing .key:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+kdb {
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: 700;
+}
+
+span {
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .key {
+    padding: 0.75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
