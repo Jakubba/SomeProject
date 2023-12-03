@@ -1,0 +1,151 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Special Elite', sans-serif;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+p {
+  font-size: 1.1em;
+  line-height: 25px;
+  max-width: 650px;
+  margin: 1.5em 0;
+}
+h3 {
+  font-size: 2em;
+}
+h1 {
+  font-size: 3em;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./assets/img/sherlock_background.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 80vh;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  border-image: fill 0 linear-gradient(rgba(0, 0, 51, 0), #280000ae);
+}
+.hero div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 12.5rem;
+  line-height: 13.5rem;
+  font-family: 'Great Vibes';
+  color: brown;
+  text-shadow: -5px 0 #000000, 0 2px #000000, 1px 0 #000000, 0 -1px rgb(37, 0, 0);
+}
+.hero .subtitle {
+  font-size: 5.5rem;
+  line-height: 3.5rem;
+  margin: 0;
+  color: brown;
+  max-width: 100%;
+  text-shadow: -5px 0 #000000, 0 2px #000000, 1px 0 #000000, 0 -1px rgb(37, 0, 0);
+}
+
+section {
+  padding: 2.5rem;
+}
+
+.title {
+  height: 30em;
+  position: relative;
+}
+.title h1 {
+  font-size: clamp(3em, 7vw, 6em);
+  position: absolute;
+  color: #fff;
+}
+.title h1:nth-child(1) {
+  top: 40%;
+  left: 10%;
+  color: rgba(175, 29, 29, 0.715);
+}
+.title h1:nth-child(2) {
+  top: 60%;
+  right: 10%;
+}
+.title h1:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.info {
+  position: relative;
+  background: url('./assets/img/paper-bg.jpg') no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 8px 8px rgb(0, 0, 0) inset;
+}
+.info-item {
+  width: 60%;
+  margin: 6em auto;
+}
+.info-item i {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: chocolate;
+}
+.split-image {
+  /* background-color: #111; */
+  position: relative;
+  height: 100vh;
+  min-height: 30em;
+  overflow: hidden;
+}
+.img-1,
+.img-2,
+.img-3 {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5em;
+  opacity: 0.2;
+}
+.split-image img {
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+}
+.split-image .img-1 {
+  left: -27%;
+}
+.split-image .img-2 {
+  right: -27%;
+}
+.split-image .img-3 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.split-image .img-1 img {
+  right: 0;
+  object-fit: contain;
+}
+.split-image .img-2 img {
+  left: 0;
+  object-fit: contain;
+}
+.split-image-text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
