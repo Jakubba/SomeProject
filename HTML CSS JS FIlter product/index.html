@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product filter</title>
+    <link rel="stylesheet" href="style.css " />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Great+Vibes&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="search-container">
+        <input type="search" id="search-input" placeholder="Search product name here.." />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('All')">All</button>
+        <button class="button-value" onclick="filterProduct('Funko')">Funko</button>
+        <button class="button-value" onclick="filterProduct('Game')">Game</button>
+        <button class="button-value" onclick="filterProduct('Accesories')">
+          Accesories
+        </button>
+      </div>
+      <div id="products"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
