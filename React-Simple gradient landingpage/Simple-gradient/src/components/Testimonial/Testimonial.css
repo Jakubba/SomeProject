@@ -1,0 +1,39 @@
+.testimonial {
+  padding: 64px;
+}
+.testimonial__container {
+  margin: auto;
+  position: relative;
+  max-width: 484px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.testimonial__heading {
+  margin: 0px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.testimonial__author-section {
+  display: flex;
+  column-gap: 16px;
+  height: 43px;
+  justify-content: center;
+  align-items: end;
+  color: var(--primary-100);
+}
+
+.testimonial__organization {
+  color: var(--primary-100);
+  opacity: 0.7;
+}
+
+.testimonial__quotes {
+  position: absolute;
+  height: 24px;
+  width: 37px;
+  top: 0;
+  left: 0;
+}

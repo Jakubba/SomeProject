@@ -1,0 +1,364 @@
+:root {
+  --primary: #ff0000;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-color: #000000;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+}
+.menu {
+  color: #fff;
+  font-size: 2em;
+}
+.logo img {
+  max-width: 60px;
+  filter: invert(1);
+}
+.nav {
+  display: flex;
+  li {
+    list-style: none;
+    margin: 0 20px;
+    &:hover {
+      color: red;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 300;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 10px;
+    }
+  }
+}
+
+.nav-collapse {
+  display: none;
+}
+.search {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  transition: 0.5s;
+  &:hover {
+    width: 300px;
+  }
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    border: 4px;
+    padding: 0 10px 0 50px;
+    backdrop-filter: blur(10px);
+    &::placeholder {
+      color: #ffffff;
+      text-transform: uppercase;
+      transform: translateX(5px);
+      font-weight: 300;
+    }
+  }
+  ion-icon {
+    font-size: 1.4em;
+    height: 1.4em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: #ffffff;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+  .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .backscene {
+        position: absolute;
+        content: '';
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(2px);
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+      }
+      .banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 100px 0;
+        overflow: hidden;
+        background: transparent;
+        transition: 0.5s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+          color: #ffffff;
+          font-size: 10em;
+          letter-spacing: 5px;
+          line-height: 0.9;
+          z-index: 10;
+          text-transform: uppercase;
+          font-family: 'Gameshow';
+          letter-spacing: -30px;
+        }
+        img {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 700px;
+          max-height: 900px;
+          z-index: 1;
+          object-fit: contain;
+        }
+        .left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .features {
+            max-width: 400px;
+            margin-bottom: 100px;
+            .rating {
+              color: #ffffff;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-bottom: 25px;
+              .score {
+                padding: 15px;
+                font-size: 2em;
+                font-weight: 400;
+                color: red;
+                background: #ffffff;
+              }
+            }
+            .content {
+              margin-left: 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: start;
+              h4 {
+                color: #ffffff;
+                font-style: 1.5em;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+              }
+              span {
+                font-size: 0.7em;
+                text-transform: uppercase;
+                font-weight: 200;
+              }
+              .subtitle {
+                color: red;
+              }
+            }
+            .pricing {
+              color: #ffffff;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              ion-icon {
+                padding: 15px;
+                height: 3em;
+                font-weight: 400;
+                color: #ffffff;
+                background: rgba(255, 0, 0, 0.6);
+                transition: 0.3s;
+                &:hover {
+                  background: rgba(255, 0, 0, 0.9);
+                }
+              }
+            }
+          }
+        }
+        .right {
+          position: relative;
+          height: 100vh;
+          max-width: 450px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          z-index: 100;
+          h2 {
+            color: #ffffff;
+            font-size: 3.5em;
+            line-height: 1em;
+            font-weight: 400;
+            text-align: right;
+            margin-bottom: 20px;
+          }
+          iframe {
+            max-width: 450px;
+            max-height: 255px;
+          }
+          .description {
+            padding: 30px 60px 0 0;
+            color: #ffffff;
+            margin-bottom: 20px;
+            li {
+              list-style: none;
+            }
+            h4 {
+              display: inline-block;
+              font-size: 1.3em;
+              text-transform: uppercase;
+              font-weight: 400;
+              letter-spacing: 1px;
+              display: flex;
+              align-items: center;
+              ion-icon {
+                height: 1.3em;
+                margin-right: 10px;
+              }
+            }
+            p {
+              margin: 50x 0 25px 20px;
+              font-weight: 200;
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper-button-next {
+    position: absolute;
+    left: 96%;
+    top: 45%;
+    width: 54px;
+    height: 54px;
+  }
+  .swiper-button-prev {
+    position: absolute;
+    left: 1%;
+    top: 45%;
+    width: 54px;
+    height: 54px;
+  }
+  .swiper-pagination {
+    max-height: 20px;
+    position: absolute;
+    left: 30%;
+    top: 44%;
+    z-index: 10;
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: transparent;
+      opacity: 1;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      z-index: 10;
+    }
+    .swiper-pagination-bullet-active {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
+  line-height: 0;
+  width: 54px;
+  height: 54px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sci {
+  position: absolute;
+  left: 100px;
+  bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100px;
+  gap: 20px;
+  z-index: 10;
+
+  ion-icon {
+    color: #ffffff;
+    transition: 0.3s;
+    padding: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%)
+      contrast(102%);
+    cursor: pointer;
+    &:hover {
+      color: rgba(255, 0, 0, 0.6);
+      filter: invert(10%) sepia(81%) saturate(4117%) hue-rotate(356deg) brightness(100%)
+        contrast(97%);
+    }
+  }
+  li {
+    list-style: none;
+    height: 1.5em;
+  }
+}

@@ -1,0 +1,426 @@
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert; }
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+body {
+  margin: 0; }
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert; }
+
+main {
+  display: block; }
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu,
+summary {
+  list-style: none; }
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%; }
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse; }
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto; }
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert; }
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert; }
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box; }
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset; }
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none; }
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable='false'])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto; }
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable='true']) {
+  -webkit-user-drag: element; }
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box; }
+
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none; }
+
+:root {
+  --primary: #ff0000; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-color: #000000;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px; }
+
+.menu {
+  color: #fff;
+  font-size: 2em; }
+
+.logo img {
+  max-width: 60px;
+  filter: invert(1); }
+
+.nav {
+  display: flex; }
+  .nav li {
+    list-style: none;
+    margin: 0 20px; }
+    .nav li:hover {
+      color: red; }
+    .nav li a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 300;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 10px; }
+
+.nav-collapse {
+  display: none; }
+
+.search {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  transition: 0.5s; }
+  .search:hover {
+    width: 300px; }
+  .search input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    border: 4px;
+    padding: 0 10px 0 50px;
+    backdrop-filter: blur(10px); }
+    .search input::placeholder {
+      color: #ffffff;
+      text-transform: uppercase;
+      transform: translateX(5px);
+      font-weight: 300; }
+  .search ion-icon {
+    font-size: 1.4em;
+    height: 1.4em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: #ffffff;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer; }
+
+.swiper {
+  width: 100%;
+  height: 100vh; }
+  .swiper .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; }
+    .swiper .swiper-wrapper .swiper-slide {
+      width: 100%;
+      height: 100%; }
+      .swiper .swiper-wrapper .swiper-slide::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6); }
+      .swiper .swiper-wrapper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center; }
+      .swiper .swiper-wrapper .swiper-slide .backscene {
+        position: absolute;
+        content: '';
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(2px);
+        width: 700px;
+        height: 700px;
+        border-radius: 50%; }
+      .swiper .swiper-wrapper .swiper-slide .banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 100px 0;
+        overflow: hidden;
+        background: transparent;
+        transition: 0.5s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .swiper .swiper-wrapper .swiper-slide .banner h1 {
+          color: #ffffff;
+          font-size: 10em;
+          letter-spacing: 5px;
+          line-height: 0.9;
+          z-index: 10;
+          text-transform: uppercase;
+          font-family: 'Gameshow';
+          letter-spacing: -30px; }
+        .swiper .swiper-wrapper .swiper-slide .banner img {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 700px;
+          max-height: 900px;
+          z-index: 1;
+          object-fit: contain; }
+        .swiper .swiper-wrapper .swiper-slide .banner .left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around; }
+          .swiper .swiper-wrapper .swiper-slide .banner .left .features {
+            max-width: 400px;
+            margin-bottom: 100px; }
+            .swiper .swiper-wrapper .swiper-slide .banner .left .features .rating {
+              color: #ffffff;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-bottom: 25px; }
+              .swiper .swiper-wrapper .swiper-slide .banner .left .features .rating .score {
+                padding: 15px;
+                font-size: 2em;
+                font-weight: 400;
+                color: red;
+                background: #ffffff; }
+            .swiper .swiper-wrapper .swiper-slide .banner .left .features .content {
+              margin-left: 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: start; }
+              .swiper .swiper-wrapper .swiper-slide .banner .left .features .content h4 {
+                color: #ffffff;
+                font-style: 1.5em;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-transform: uppercase; }
+              .swiper .swiper-wrapper .swiper-slide .banner .left .features .content span {
+                font-size: 0.7em;
+                text-transform: uppercase;
+                font-weight: 200; }
+              .swiper .swiper-wrapper .swiper-slide .banner .left .features .content .subtitle {
+                color: red; }
+            .swiper .swiper-wrapper .swiper-slide .banner .left .features .pricing {
+              color: #ffffff;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center; }
+              .swiper .swiper-wrapper .swiper-slide .banner .left .features .pricing ion-icon {
+                padding: 15px;
+                height: 3em;
+                font-weight: 400;
+                color: #ffffff;
+                background: rgba(255, 0, 0, 0.6);
+                transition: 0.3s; }
+                .swiper .swiper-wrapper .swiper-slide .banner .left .features .pricing ion-icon:hover {
+                  background: rgba(255, 0, 0, 0.9); }
+        .swiper .swiper-wrapper .swiper-slide .banner .right {
+          position: relative;
+          height: 100vh;
+          max-width: 450px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          z-index: 100; }
+          .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
+            color: #ffffff;
+            font-size: 3.5em;
+            line-height: 1em;
+            font-weight: 400;
+            text-align: right;
+            margin-bottom: 20px; }
+          .swiper .swiper-wrapper .swiper-slide .banner .right iframe {
+            max-width: 450px;
+            max-height: 255px; }
+          .swiper .swiper-wrapper .swiper-slide .banner .right .description {
+            padding: 30px 60px 0 0;
+            color: #ffffff;
+            margin-bottom: 20px; }
+            .swiper .swiper-wrapper .swiper-slide .banner .right .description li {
+              list-style: none; }
+            .swiper .swiper-wrapper .swiper-slide .banner .right .description h4 {
+              display: inline-block;
+              font-size: 1.3em;
+              text-transform: uppercase;
+              font-weight: 400;
+              letter-spacing: 1px;
+              display: flex;
+              align-items: center; }
+              .swiper .swiper-wrapper .swiper-slide .banner .right .description h4 ion-icon {
+                height: 1.3em;
+                margin-right: 10px; }
+            .swiper .swiper-wrapper .swiper-slide .banner .right .description p {
+              margin: 50x 0 25px 20px;
+              font-weight: 200; }
+  .swiper .swiper-button-next {
+    position: absolute;
+    left: 96%;
+    top: 45%;
+    width: 54px;
+    height: 54px; }
+  .swiper .swiper-button-prev {
+    position: absolute;
+    left: 1%;
+    top: 45%;
+    width: 54px;
+    height: 54px; }
+  .swiper .swiper-pagination {
+    max-height: 20px;
+    position: absolute;
+    left: 30%;
+    top: 44%;
+    z-index: 10; }
+    .swiper .swiper-pagination .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: transparent;
+      opacity: 1;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      z-index: 10; }
+    .swiper .swiper-pagination .swiper-pagination-bullet-active {
+      background: rgba(255, 255, 255, 0.5); }
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
+  line-height: 0;
+  width: 54px;
+  height: 54px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8); }
+
+.sci {
+  position: absolute;
+  left: 100px;
+  bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100px;
+  gap: 20px;
+  z-index: 10; }
+  .sci ion-icon {
+    color: #ffffff;
+    transition: 0.3s;
+    padding: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    cursor: pointer; }
+    .sci ion-icon:hover {
+      color: rgba(255, 0, 0, 0.6);
+      filter: invert(10%) sepia(81%) saturate(4117%) hue-rotate(356deg) brightness(100%) contrast(97%); }
+  .sci li {
+    list-style: none;
+    height: 1.5em; }
+
+/*# sourceMappingURL=style.css.map */
